@@ -1,0 +1,7 @@
+it can't  be exucted by browser.
+error can be caught and fixed early before execution.
+all we need is a compiler that will convert the typescript code into js;
+so we need to install it in nodejs enviroment.
+tsc - typescript compiler;
+it forces us to write cleaner and error free code.
+its statically typed you cant change the type of variable after assigned a value;
