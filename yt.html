@@ -48,24 +48,24 @@
   </body>
   <script>
     const playerIdArr = Array.from(
-      { length: 100 },
+      { length: 10 },
       (_, index) => "player" + index
     );
     let videoLink = "";
 
     function playAgain() {
+      console.log("calling function");
       playerIdArr.map((i) => {
         let player = document.getElementById(i);
         player.src += "?autoplay=1";
       });
     }
 
-    setInterval(playAgain,180000)
-
     function playVideo() {
-      const videoLinkInput = document.getElementById("video-link-input").value;
-      videoLink = videoLinkInput|| "https://youtu.be/NX1Uqqa9QcU?si=FgVNWInjOm-ym0Fq"
+      let videoLinkInput = document.getElementById("video-link-input").value;
+      videoLink = "https://youtu.be/NX1Uqqa9QcU?si=FgVNWInjOm-ym0Fq";
       const videoContainer = document.getElementById("video-container");
+      videoLinkInput = videoLink;
       playerIdArr.forEach((playerId) => {
         let html = `<div class="video-frame">
     <iframe
@@ -84,6 +84,13 @@
       });
     }
     playVideo();
+    setTimeout(() => {
+      document.getElementById("play").click();
+      document.getElementById("play").click();
+    }, 30000);
+    setInterval(() => {
+      document.getElementById("play").click();
+    }, 200000);
     function getYouTubeVideoID(url) {
       const videoIDRegex =
         /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?feature=player_embedded&v=|embed\?feature=player_embedded&v=))([^&?\n]+)/;
