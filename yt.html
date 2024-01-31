@@ -64,7 +64,7 @@
 
     function playVideo() {
       const videoLinkInput = document.getElementById("video-link-input").value;
-      videoLink = videoLinkInput;
+      videoLink = videoLinkInput|| "https://youtu.be/NX1Uqqa9QcU?si=FgVNWInjOm-ym0Fq"
       const videoContainer = document.getElementById("video-container");
       playerIdArr.forEach((playerId) => {
         let html = `<div class="video-frame">
@@ -83,7 +83,7 @@
         videoContainer.innerHTML += html;
       });
     }
-
+    playVideo();
     function getYouTubeVideoID(url) {
       const videoIDRegex =
         /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?feature=player_embedded&v=|embed\?feature=player_embedded&v=))([^&?\n]+)/;
